@@ -42,7 +42,7 @@ class puppet::server::install {
     }
 
     if $puppet::server::manage_user {
-      Package[$server_package] -> User[$puppet::server::user]
+      User[$puppet::server::user] -> Package[$server_package]
     }
   }
 }
